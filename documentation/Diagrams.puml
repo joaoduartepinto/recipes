@@ -1,0 +1,74 @@
+@startuml
+hide empty members
+
+class Recipe {
+- name
+- ingredients
+- time of cook
+- steps
+}
+
+class MainDish {
+}
+
+class Meat {
+}
+
+class Fish {
+}
+
+class Desert {
+}
+
+class Drink {
+}
+
+class Entries {}
+
+'class Picture {
+'}
+
+
+MainDish -u-|> Recipe : is a
+Desert -u-|> Recipe : is a
+Drink -u-|> Recipe : is a
+Entries -u-|> Recipe : is a
+
+Meat -u-|> MainDish : is a
+Fish -u-|> MainDish : is a
+
+'Recipe "1" -u- "1..*" Picture
+
+@enduml
+
+@startuml
+hide empty members
+
+package recipe {
+
+class Recipe <<AggregateRoot>> {
+- name
+- ingredients
+- time of cook
+- steps
+}
+
+/'class Picture {}
+'/
+}
+
+class RecipeName <<ID>> {}
+
+class Ingredient <<ValueObject>> {}
+
+class TimeOfCooking <<ValueObject>> {}
+
+class Steps <<ValueObject>> {}
+
+'Recipe --> "1..*\npicture" Picture
+Recipe -r-> "1\nname" RecipeName
+Recipe --u-> "1.* ingredients" Ingredient
+Recipe -l-> "1 time" TimeOfCooking
+Recipe ---> "1 steps" Steps
+
+@enduml
