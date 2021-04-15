@@ -8,6 +8,7 @@ import com.pinto.receitas.shared.valueobjects.TimeOfCooking;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Recipe implements Entity<RecipeName> {
@@ -19,8 +20,8 @@ public class Recipe implements Entity<RecipeName> {
     @Getter
     private TimeOfCooking timeOfCooking;
     @Getter
-    @Setter
-    private List<Ingredient> ingredients;
+    //@Setter
+    private List<Ingredient> ingredients = new ArrayList<>();
 
     public Recipe(RecipeName recipeName, Steps steps, TimeOfCooking timeOfCooking, List<Ingredient> ingredients) {
         this.recipeName = recipeName;

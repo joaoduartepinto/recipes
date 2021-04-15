@@ -37,6 +37,9 @@ public class RecipeJpa {
         this.timeOfCooking = timeOfCooking.toString();
     }
 
+    /*
     public void setIngredients(List<IngredientJpa> ingredientJpaList) {
     }
+
+     */
 }

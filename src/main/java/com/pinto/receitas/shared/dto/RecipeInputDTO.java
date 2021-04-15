@@ -1,20 +1,24 @@
 package com.pinto.receitas.shared.dto;
 
+import lombok.Setter;
+
 import java.util.List;
 
-public class RecipeDTO {
+public class RecipeInputDTO {
 
     private final String recipeName;
     private final List<String> ingredients;
     private final String steps;
     private final String timeOfCooking;
 
-    public RecipeDTO(String recipeName, List<String> ingredients, String steps, String timeOfCooking) {
+    public RecipeInputDTO(String recipeName, List<String> ingredients, String steps, String timeOfCooking) {
         this.recipeName = recipeName;
         this.ingredients = ingredients;
         this.steps = steps;
         this.timeOfCooking = timeOfCooking;
     }
+
+
 
 
     public String unpackName() {
@@ -32,4 +36,5 @@ public class RecipeDTO {
     public String unpackTimeOfCooking() {
         return this.timeOfCooking;
     }
+
 }

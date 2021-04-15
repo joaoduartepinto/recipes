@@ -3,7 +3,7 @@ package com.pinto.receitas.application.appservicesInter;
 import com.pinto.receitas.application.appservicesImpl.AddRecipeServiceInter;
 import com.pinto.receitas.application.repositoryInter.RecipeRepositoryInter;
 import com.pinto.receitas.domain.recipe.Recipe;
-import com.pinto.receitas.shared.dto.RecipeDTO;
+import com.pinto.receitas.shared.dto.RecipeInputDTO;
 import com.pinto.receitas.shared.dto.assemblers.RecipeDomainDTOAssembler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,9 +18,9 @@ public class AddRecipeServiceImpl implements AddRecipeServiceInter {
     RecipeDomainDTOAssembler recipeDomainDTOAssembler;
 
     @Override
-    public void createRecipe(RecipeDTO recipeDTO) {
+    public void createRecipe(RecipeInputDTO recipeInputDTO) {
 
-        Recipe newRecipe = recipeDomainDTOAssembler.toRecipe(recipeDTO);
+        Recipe newRecipe = recipeDomainDTOAssembler.toRecipe(recipeInputDTO);
 
         recipeRepositoryInter.save(newRecipe);
     }

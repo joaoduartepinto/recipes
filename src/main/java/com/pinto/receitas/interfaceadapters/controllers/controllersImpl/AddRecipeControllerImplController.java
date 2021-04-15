@@ -1,10 +1,8 @@
 package com.pinto.receitas.interfaceadapters.controllers.controllersImpl;
 
-import com.mysql.cj.xdevapi.JsonParser;
 import com.pinto.receitas.application.appservicesImpl.AddRecipeServiceInter;
-import com.pinto.receitas.interfaceadapters.controllers.controllersInter.AddRecpipeInter;
-import com.pinto.receitas.shared.dto.RecipeDTO;
-import net.minidev.json.JSONObject;
+import com.pinto.receitas.interfaceadapters.controllers.controllersInter.AddRecpipeControllerInter;
+import com.pinto.receitas.shared.dto.RecipeInputDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class AddRecipeImpl implements AddRecpipeInter {
+public class AddRecipeControllerImplController implements AddRecpipeControllerInter {
 
     @Autowired
     AddRecipeServiceInter addRecipeService;
@@ -23,9 +21,9 @@ public class AddRecipeImpl implements AddRecpipeInter {
     // Nome no Postman devem coincidir com os dados no DTO
     @PostMapping("/addRecipe")
     @ResponseBody
-    public ResponseEntity<Object> addRecipe(@RequestBody RecipeDTO recipeDTO) {
+    public ResponseEntity<Object> addRecipe(@RequestBody RecipeInputDTO recipeInputDTO) {
 
-        addRecipeService.createRecipe(recipeDTO);
+        addRecipeService.createRecipe(recipeInputDTO);
 
         return new ResponseEntity<>(true, HttpStatus.CREATED);
     }

@@ -1,8 +1,8 @@
 package com.pinto.receitas.application.appservicesImpl;
 
-import com.pinto.receitas.shared.dto.RecipeDTO;
+import com.pinto.receitas.shared.dto.RecipeInputDTO;
 
 public interface AddRecipeServiceInter {
 
-    void createRecipe(RecipeDTO recipeDTO);
+    void createRecipe(RecipeInputDTO recipeInputDTO);
 }

@@ -18,13 +18,10 @@ public class RecipeRepositoryImpl implements RecipeRepositoryInter {
 
     @Autowired
     RecipeJpaRepository recipeJpaRepository;
-
     /*
     @Autowired
     IngredientsJpaRepository ingredientsJpaRepository;
-
      */
-
     @Autowired
     RecipeDomainDataAssembler recipeDomainDataAssembler;
 
