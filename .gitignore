@@ -36,4 +36,5 @@ build/
 .mvn/
 
 ### application.properties ###
+src/main/resources/*.properties
 src/main/resources/application.properties
