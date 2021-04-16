@@ -16,7 +16,6 @@ public class RecipeDomainDataAssembler {
 
         RecipeJpa recipeJpa = new RecipeJpa(recipe.getRecipeName(), recipe.getSteps(), recipe.getTimeOfCooking());
 
-        /*
         List<Ingredient> ingredientList = recipe.getIngredients();
         List<IngredientJpa> ingredientJpaList = new ArrayList<>();
 
@@ -25,11 +24,7 @@ public class RecipeDomainDataAssembler {
 
         }
 
-
-
-        recipeJpa.setIngredients(ingredientJpaList);
-
-         */
+        //recipeJpa.setIngredientJpas(ingredientJpaList);
 
         return recipeJpa;
     }

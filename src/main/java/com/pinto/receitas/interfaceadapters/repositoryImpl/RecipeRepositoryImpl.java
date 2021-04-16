@@ -3,6 +3,7 @@ package com.pinto.receitas.interfaceadapters.repositoryImpl;
 import com.pinto.receitas.application.repositoryInter.RecipeRepositoryInter;
 import com.pinto.receitas.domain.recipe.Recipe;
 
+import com.pinto.receitas.interfaceadapters.repositoryJpaInter.IngredientsJpaRepository;
 import com.pinto.receitas.interfaceadapters.repositoryJpaInter.RecipeJpaRepository;
 import com.pinto.receitas.shared.datamodel.IngredientJpa;
 import com.pinto.receitas.shared.datamodel.RecipeJpa;
@@ -18,10 +19,10 @@ public class RecipeRepositoryImpl implements RecipeRepositoryInter {
 
     @Autowired
     RecipeJpaRepository recipeJpaRepository;
-    /*
+
     @Autowired
     IngredientsJpaRepository ingredientsJpaRepository;
-     */
+
     @Autowired
     RecipeDomainDataAssembler recipeDomainDataAssembler;
 

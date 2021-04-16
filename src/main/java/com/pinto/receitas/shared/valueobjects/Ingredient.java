@@ -7,4 +7,9 @@ public class Ingredient implements ValueObject {
     public Ingredient(String ingredient) {
         this.ingredient = ingredient;
     }
+
+    @Override
+    public String toString() {
+        return this.ingredient;
+    }
 }
