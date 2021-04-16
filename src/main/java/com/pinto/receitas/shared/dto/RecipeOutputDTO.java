@@ -9,7 +9,8 @@ public class RecipeOutputDTO {
 
     @Getter
     private final String recipeName;
-    //private List<String> ingredients = new ArrayList<>();
+    @Getter
+    private List<String> ingredients = new ArrayList<>();
     @Getter
     private final String steps;
     @Getter
@@ -21,9 +22,8 @@ public class RecipeOutputDTO {
         this.steps = steps;
     }
 
-    /*public void setIngredients(List<String> ingredientDTOList) {
+    public void setIngredients(List<String> ingredientDTOList) {
         this.ingredients = ingredientDTOList;
     }
 
-     */
 }

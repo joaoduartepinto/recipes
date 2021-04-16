@@ -20,7 +20,7 @@ public class Recipe implements Entity<RecipeName> {
     @Getter
     private TimeOfCooking timeOfCooking;
     @Getter
-    //@Setter
+    @Setter
     private List<Ingredient> ingredients = new ArrayList<>();
 
     public Recipe(RecipeName recipeName, Steps steps, TimeOfCooking timeOfCooking, List<Ingredient> ingredients) {

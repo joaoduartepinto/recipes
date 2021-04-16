@@ -1,6 +1,6 @@
-package com.pinto.receitas.application.appservicesInter;
+package com.pinto.receitas.application.appservicesImpl;
 
-import com.pinto.receitas.application.appservicesImpl.GetRecipeServiceInter;
+import com.pinto.receitas.application.appservicesInter.GetRecipeServiceInter;
 import com.pinto.receitas.application.repositoryInter.RecipeRepositoryInter;
 import com.pinto.receitas.domain.recipe.Recipe;
 import com.pinto.receitas.shared.dto.RecipeOutputDTO;

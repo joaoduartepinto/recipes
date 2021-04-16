@@ -1,8 +1,7 @@
 package com.pinto.receitas.interfaceadapters.controllers.controllersImpl;
 
-import com.pinto.receitas.application.appservicesImpl.GetRecipeServiceInter;
+import com.pinto.receitas.application.appservicesInter.GetRecipeServiceInter;
 import com.pinto.receitas.interfaceadapters.controllers.controllersInter.GetRecipeControllerInter;
-import com.pinto.receitas.shared.dto.RecipeInputDTO;
 import com.pinto.receitas.shared.dto.RecipeOutputDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

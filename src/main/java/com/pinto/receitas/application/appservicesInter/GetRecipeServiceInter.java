@@ -1,4 +1,4 @@
-package com.pinto.receitas.application.appservicesImpl;
+package com.pinto.receitas.application.appservicesInter;
 
 import com.pinto.receitas.shared.dto.RecipeOutputDTO;
 

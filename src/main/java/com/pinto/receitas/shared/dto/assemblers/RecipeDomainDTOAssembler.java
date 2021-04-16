@@ -40,20 +40,16 @@ public class RecipeDomainDTOAssembler {
 
         RecipeOutputDTO recipeDTO = new RecipeOutputDTO(recipe.getRecipeName().toString(), recipe.getSteps().toString(), recipe.getTimeOfCooking().toString());
 
-        //List<Ingredient> ingredientList = recipe.getIngredients();
-        //List<String> ingredientDTOList = new ArrayList<>();
+        List<Ingredient> ingredientList = recipe.getIngredients();
+        List<String> ingredientDTOList = new ArrayList<>();
 
-        /*
+
         for (Ingredient ingredient : ingredientList) {
             ingredientDTOList.add(ingredient.toString());
         }
 
-         */
-
-        /*
         recipeDTO.setIngredients(ingredientDTOList);
 
-         */
 
         return recipeDTO;
     }

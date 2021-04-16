@@ -1,6 +1,6 @@
 package com.pinto.receitas.interfaceadapters.controllers.controllersImpl;
 
-import com.pinto.receitas.application.appservicesImpl.AddRecipeServiceInter;
+import com.pinto.receitas.application.appservicesInter.AddRecipeServiceInter;
 import com.pinto.receitas.interfaceadapters.controllers.controllersInter.AddRecpipeControllerInter;
 import com.pinto.receitas.shared.dto.RecipeInputDTO;
 import org.springframework.beans.factory.annotation.Autowired;
