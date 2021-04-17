@@ -29,13 +29,8 @@ public class RecipeJpa {
     //@Column(name = "timeOfCooking")
     private String timeOfCooking;
 
-/*
-    @OneToMany(mappedBy = "recipe_jpa", cascade = CascadeType.ALL)
-    private List<IngredientJpa> ingredientJpas;
-
- */
-
-
+    //@OneToMany(mappedBy = "recipeJpa", cascade = CascadeType.ALL)
+    //private List<IngredientJpa> ingredientJpas;
 
     public RecipeJpa(RecipeName recipeName, Steps steps, TimeOfCooking timeOfCooking) {
         this.recipeName = recipeName.toString();

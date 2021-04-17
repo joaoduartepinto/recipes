@@ -22,10 +22,9 @@ public class IngredientJpa {
     @Getter
     private String ingredient;
 
-    @ManyToOne()
-    //@JoinColumn(name = "recipeJpa", nullable = false)
+    @ManyToOne
+    //@JoinColumn(name = "recipe_jpa", nullable = false, referencedColumnName = "recipe_name")
     private RecipeJpa recipeJpa;
-
 
     public IngredientJpa(Ingredient ingredient, RecipeJpa recipeJpa) {
         this.ingredient = ingredient.toString();
