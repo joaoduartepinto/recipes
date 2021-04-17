@@ -23,6 +23,7 @@ public class RecipeJpa {
     private String recipeName;
     @Getter
     //@Column(name = "steps")
+    @Column(columnDefinition = "TEXT")
     private String steps;
     @Getter
     //@Column(name = "timeOfCooking")
