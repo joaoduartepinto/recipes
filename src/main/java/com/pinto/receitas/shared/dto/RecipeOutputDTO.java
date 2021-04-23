@@ -16,7 +16,7 @@ public class RecipeOutputDTO {
     @Getter
     private final String timeOfCooking;
 
-    public RecipeOutputDTO(String recipeName, String timeOfCooking, String steps) {
+    public RecipeOutputDTO(String recipeName, String steps, String timeOfCooking) {
         this.recipeName = recipeName;
         this.timeOfCooking = timeOfCooking;
         this.steps = steps;

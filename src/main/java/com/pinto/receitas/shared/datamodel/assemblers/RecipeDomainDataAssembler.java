@@ -3,7 +3,11 @@ package com.pinto.receitas.shared.datamodel.assemblers;
 import com.pinto.receitas.domain.recipe.Recipe;
 import com.pinto.receitas.shared.datamodel.IngredientJpa;
 import com.pinto.receitas.shared.datamodel.RecipeJpa;
+import com.pinto.receitas.shared.datamodel.RecipeNameJpa;
 import com.pinto.receitas.shared.valueobjects.Ingredient;
+import com.pinto.receitas.shared.valueobjects.RecipeName;
+import com.pinto.receitas.shared.valueobjects.Steps;
+import com.pinto.receitas.shared.valueobjects.TimeOfCooking;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -14,23 +18,42 @@ public class RecipeDomainDataAssembler {
 
     public RecipeJpa toData(Recipe recipe) {
 
-        RecipeJpa recipeJpa = new RecipeJpa(recipe.getRecipeName(), recipe.getSteps(), recipe.getTimeOfCooking());
+        RecipeNameJpa recipeNameJpa = new RecipeNameJpa(recipe.getRecipeName().toString());
+
+        RecipeJpa recipeJpa = new RecipeJpa(recipeNameJpa, recipe.getSteps(), recipe.getTimeOfCooking());
 
         List<Ingredient> ingredientList = recipe.getIngredients();
         List<IngredientJpa> ingredientJpaList = new ArrayList<>();
 
-        for (Ingredient ingredient: ingredientList) {
+        for (Ingredient ingredient : ingredientList) {
             ingredientJpaList.add(new IngredientJpa(ingredient, recipeJpa));
 
         }
 
-        //recipeJpa.setIngredientJpas(ingredientJpaList);
+        recipeJpa.setIngredientJpas(ingredientJpaList);
 
         return recipeJpa;
     }
 
-    //TODO: Incompleto, como fazer para colocar os ingredientes
     public Recipe toDomain(RecipeJpa recipeJpa) {
-        return new Recipe(recipeJpa.getRecipeName(), recipeJpa.getSteps(), recipeJpa.getTimeOfCooking());
+        RecipeName recipeName = new RecipeName(recipeJpa.getRecipeName().toString());
+
+        Steps steps = new Steps(recipeJpa.getSteps());
+
+        TimeOfCooking timeOfCooking = new TimeOfCooking(recipeJpa.getTimeOfCooking());
+
+        Recipe recipe = new Recipe(recipeName, steps, timeOfCooking);
+
+        List<IngredientJpa> ingredientJpaList = recipeJpa.getIngredientJpas();
+
+        List<Ingredient> ingredients = new ArrayList<>();
+
+        for (IngredientJpa ingredientJpa : ingredientJpaList) {
+            ingredients.add(new Ingredient(ingredientJpa.getIngredient()));
+        }
+
+        recipe.setIngredients(ingredients);
+
+        return recipe;
     }
 }

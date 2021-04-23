@@ -2,10 +2,10 @@ package com.pinto.receitas.interfaceadapters.repositoryImpl;
 
 import com.pinto.receitas.application.repositoryInter.RecipeRepositoryInter;
 import com.pinto.receitas.domain.recipe.Recipe;
-import com.pinto.receitas.interfaceadapters.repositoryJpaInter.IngredientsJpaRepository;
 import com.pinto.receitas.interfaceadapters.repositoryJpaInter.RecipeJpaRepository;
 import com.pinto.receitas.shared.datamodel.IngredientJpa;
 import com.pinto.receitas.shared.datamodel.RecipeJpa;
+import com.pinto.receitas.shared.datamodel.RecipeNameJpa;
 import com.pinto.receitas.shared.datamodel.assemblers.IngridientDomainDataAssembler;
 import com.pinto.receitas.shared.datamodel.assemblers.RecipeDomainDataAssembler;
 import com.pinto.receitas.shared.valueobjects.Ingredient;
@@ -23,38 +23,24 @@ public class RecipeRepositoryImpl implements RecipeRepositoryInter {
     RecipeJpaRepository recipeJpaRepository;
 
     @Autowired
-    IngredientsJpaRepository ingredientsJpaRepository;
-
-    @Autowired
     RecipeDomainDataAssembler recipeDomainDataAssembler;
 
-    @Autowired
-    IngridientDomainDataAssembler ingridientDomainDataAssembler;
-
     @Override
-    public Optional<Recipe> findById(RecipeName recipeName) {
-        Optional<RecipeJpa> optional = recipeJpaRepository.findById(recipeName.toString());
+    public Recipe findById(RecipeName recipeName) {
+        RecipeNameJpa recipeNameJpa = new RecipeNameJpa(recipeName.toString());
+
+        Optional<RecipeJpa> optional = recipeJpaRepository.findById(recipeNameJpa);
+
+        Recipe recipe;
 
         if (optional.isPresent()) {
             RecipeJpa recipeJpa = optional.get();
 
-            Recipe recipe = recipeDomainDataAssembler.toDomain(recipeJpa);
+            recipe = recipeDomainDataAssembler.toDomain(recipeJpa);
 
-            List<IngredientJpa> ingredientJpaList = ingredientsJpaRepository.findIngredientJpaByRecipeJpa(recipeJpa);
-
-            List<Ingredient> ingredients = new ArrayList<>();
-
-            for (IngredientJpa ingredientJpa : ingredientJpaList) {
-                Ingredient ingredient = ingridientDomainDataAssembler.toDomain(ingredientJpa);
-
-                ingredients.add(ingredient);
-            }
-
-            recipe.setIngredients(ingredients);
-
-            return Optional.of(recipe);
+            return recipe;
         } else
-            return Optional.empty();
+            throw new IllegalArgumentException("Recipe Does not exists");
 
     }
 
@@ -65,12 +51,14 @@ public class RecipeRepositoryImpl implements RecipeRepositoryInter {
 
         recipeJpaRepository.save(recipeJpa);
 
-        List<Ingredient> ingredients = recipe.getIngredients();
+        //List<Ingredient> ingredients = recipe.getIngredients();
 
-        for (Ingredient ingredient : ingredients) {
+        /*for (Ingredient ingredient : ingredients) {
             IngredientJpa ingredientJpa = ingridientDomainDataAssembler.toData(ingredient, recipeJpa);
             ingredientsJpaRepository.save(ingredientJpa);
         }
+
+         */
 
     }
 }

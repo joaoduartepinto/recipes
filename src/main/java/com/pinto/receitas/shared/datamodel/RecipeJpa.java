@@ -14,28 +14,29 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Entity
-//@Table(name = "recipeJpas")
+@Table(name = "recipes")
 public class RecipeJpa {
 
     @Getter
     @Id
-    //@Column(name = "recipeName")
-    private String recipeName;
+    @Column(name = "recipeName")
+    private RecipeNameJpa recipeName;
+
     @Getter
-    //@Column(name = "steps")
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT", name = "steps")
     private String steps;
+
     @Getter
-    //@Column(name = "timeOfCooking")
+    @Column(name = "timeOfCooking")
     private String timeOfCooking;
 
-    //@OneToMany(mappedBy = "recipeJpa", cascade = CascadeType.ALL)
-    //private List<IngredientJpa> ingredientJpas;
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
+    private List<IngredientJpa> ingredientJpas;
 
-    public RecipeJpa(RecipeName recipeName, Steps steps, TimeOfCooking timeOfCooking) {
-        this.recipeName = recipeName.toString();
+    public RecipeJpa(RecipeNameJpa recipeName, Steps steps, TimeOfCooking timeOfCooking) {
+        this.recipeName = recipeName;
         this.steps = steps.toString();
         this.timeOfCooking = timeOfCooking.toString();
-        //ingredientJpas = new ArrayList<>();
+        ingredientJpas = new ArrayList<>();
     }
 }

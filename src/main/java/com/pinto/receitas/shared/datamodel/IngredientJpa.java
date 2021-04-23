@@ -12,7 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 
 @Entity
-//@Table(name = "ingredientJpas")
+@Table(name = "ingredients")
 public class IngredientJpa {
 
     @Id
@@ -23,13 +23,12 @@ public class IngredientJpa {
     private String ingredient;
 
     @ManyToOne
-    //@JoinColumn(name = "recipe_jpa", nullable = false, referencedColumnName = "recipe_name")
-    private RecipeJpa recipeJpa;
+    @JoinColumn(name = "recipe", nullable = false)
+    private RecipeJpa recipe;
 
     public IngredientJpa(Ingredient ingredient, RecipeJpa recipeJpa) {
         this.ingredient = ingredient.toString();
-        this.recipeJpa = recipeJpa;
-
+        this.recipe = recipeJpa;
     }
 
 

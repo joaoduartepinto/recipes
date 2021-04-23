@@ -25,14 +25,7 @@ public class GetRecipeServiceImpl implements GetRecipeServiceInter {
 
         RecipeName recipeName = new RecipeName(getRecipeName);
 
-        Optional<Recipe> optionalRecipe = recipeRepositoryInter.findById(recipeName);
-
-        Recipe recipe;
-
-        if (optionalRecipe.isPresent()) {
-            recipe = optionalRecipe.get();
-        } else
-            throw new IllegalArgumentException("ups");
+        Recipe recipe = recipeRepositoryInter.findById(recipeName);
 
         return recipeDomainDTOAssembler.toOutputDTO(recipe);
     }

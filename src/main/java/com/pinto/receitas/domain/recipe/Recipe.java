@@ -30,9 +30,9 @@ public class Recipe implements Entity<RecipeName> {
         this.ingredients = ingredients;
     }
 
-    public Recipe(String recipeName, String steps, String timeOfCooking) {
-        this.recipeName = new RecipeName(recipeName);
-        this.steps = new Steps(steps);
-        this.timeOfCooking = new TimeOfCooking(timeOfCooking);
+    public Recipe(RecipeName recipeName, Steps steps, TimeOfCooking timeOfCooking) {
+        this.recipeName = recipeName;
+        this.steps = steps;
+        this.timeOfCooking = timeOfCooking;
     }
 }

@@ -4,7 +4,7 @@ import java.util.Optional;
 
 public interface Repository <T, K>{
 
-    Optional<T> findById(K k);
+    T findById(K k);
 
     void save(T t);
 }
