@@ -5,4 +5,6 @@ import com.pinto.receitas.shared.datamodel.RecipeNameJpa;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RecipeJpaRepository extends JpaRepository<RecipeJpa, RecipeNameJpa> {
+
+    boolean existsByRecipeName(RecipeNameJpa recipeNameJpa);
 }
