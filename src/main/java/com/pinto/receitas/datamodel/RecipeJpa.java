@@ -1,8 +1,7 @@
-package com.pinto.receitas.shared.datamodel;
+package com.pinto.receitas.datamodel;
 
-import com.pinto.receitas.shared.valueobjects.RecipeName;
-import com.pinto.receitas.shared.valueobjects.Steps;
-import com.pinto.receitas.shared.valueobjects.TimeOfCooking;
+import com.pinto.receitas.domain.valueobjects.Steps;
+import com.pinto.receitas.domain.valueobjects.TimeOfCooking;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

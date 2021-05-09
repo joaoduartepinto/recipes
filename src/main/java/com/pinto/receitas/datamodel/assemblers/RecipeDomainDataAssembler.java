@@ -1,13 +1,13 @@
-package com.pinto.receitas.shared.datamodel.assemblers;
+package com.pinto.receitas.datamodel.assemblers;
 
 import com.pinto.receitas.domain.recipe.Recipe;
-import com.pinto.receitas.shared.datamodel.IngredientJpa;
-import com.pinto.receitas.shared.datamodel.RecipeJpa;
-import com.pinto.receitas.shared.datamodel.RecipeNameJpa;
-import com.pinto.receitas.shared.valueobjects.Ingredient;
-import com.pinto.receitas.shared.valueobjects.RecipeName;
-import com.pinto.receitas.shared.valueobjects.Steps;
-import com.pinto.receitas.shared.valueobjects.TimeOfCooking;
+import com.pinto.receitas.datamodel.IngredientJpa;
+import com.pinto.receitas.datamodel.RecipeJpa;
+import com.pinto.receitas.datamodel.RecipeNameJpa;
+import com.pinto.receitas.domain.valueobjects.Ingredient;
+import com.pinto.receitas.domain.valueobjects.RecipeName;
+import com.pinto.receitas.domain.valueobjects.Steps;
+import com.pinto.receitas.domain.valueobjects.TimeOfCooking;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

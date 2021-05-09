@@ -1,8 +1,8 @@
-package com.pinto.receitas.shared.datamodel.assemblers;
+package com.pinto.receitas.datamodel.assemblers;
 
-import com.pinto.receitas.shared.datamodel.IngredientJpa;
-import com.pinto.receitas.shared.datamodel.RecipeJpa;
-import com.pinto.receitas.shared.valueobjects.Ingredient;
+import com.pinto.receitas.datamodel.IngredientJpa;
+import com.pinto.receitas.datamodel.RecipeJpa;
+import com.pinto.receitas.domain.valueobjects.Ingredient;
 import org.springframework.stereotype.Component;
 
 @Component

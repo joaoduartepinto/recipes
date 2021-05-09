@@ -1,4 +1,4 @@
-package com.pinto.receitas.shared.dto;
+package com.pinto.receitas.dto;
 
 import lombok.Getter;
 

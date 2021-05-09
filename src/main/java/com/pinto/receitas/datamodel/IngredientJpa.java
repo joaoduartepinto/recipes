@@ -1,7 +1,6 @@
-package com.pinto.receitas.shared.datamodel;
+package com.pinto.receitas.datamodel;
 
-import com.pinto.receitas.shared.valueobjects.Ingredient;
-import lombok.AllArgsConstructor;
+import com.pinto.receitas.domain.valueobjects.Ingredient;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

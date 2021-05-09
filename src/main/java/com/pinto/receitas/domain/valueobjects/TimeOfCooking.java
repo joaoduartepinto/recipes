@@ -1,4 +1,4 @@
-package com.pinto.receitas.shared.valueobjects;
+package com.pinto.receitas.domain.valueobjects;
 
 public class TimeOfCooking implements ValueObject {
 

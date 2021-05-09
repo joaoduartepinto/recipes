@@ -1,6 +1,4 @@
-package com.pinto.receitas.shared.dto;
-
-import lombok.Setter;
+package com.pinto.receitas.dto;
 
 import java.util.List;
 

@@ -1,6 +1,5 @@
-package com.pinto.receitas.shared.dto;
+package com.pinto.receitas.dto;
 
-import com.pinto.receitas.shared.valueobjects.RecipeName;
 import org.springframework.hateoas.RepresentationModel;
 
 public class AddRecipeResponseDTO extends RepresentationModel<AddRecipeResponseDTO> {

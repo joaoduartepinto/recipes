@@ -1,12 +1,12 @@
-package com.pinto.receitas.shared.dto.assemblers;
+package com.pinto.receitas.dto.assemblers;
 
 import com.pinto.receitas.domain.recipe.Recipe;
-import com.pinto.receitas.shared.dto.RecipeInputDTO;
-import com.pinto.receitas.shared.dto.RecipeOutputDTO;
-import com.pinto.receitas.shared.valueobjects.Ingredient;
-import com.pinto.receitas.shared.valueobjects.RecipeName;
-import com.pinto.receitas.shared.valueobjects.Steps;
-import com.pinto.receitas.shared.valueobjects.TimeOfCooking;
+import com.pinto.receitas.dto.RecipeInputDTO;
+import com.pinto.receitas.dto.RecipeOutputDTO;
+import com.pinto.receitas.domain.valueobjects.Ingredient;
+import com.pinto.receitas.domain.valueobjects.RecipeName;
+import com.pinto.receitas.domain.valueobjects.Steps;
+import com.pinto.receitas.domain.valueobjects.TimeOfCooking;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 

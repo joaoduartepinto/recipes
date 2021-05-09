@@ -1,4 +1,4 @@
-package com.pinto.receitas.shared.datamodel;
+package com.pinto.receitas.datamodel;
 
 import lombok.NoArgsConstructor;
 

@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 //@EnableAutoConfiguration
 @SpringBootApplication
-//@EntityScan(basePackages = {"com.pinto.receitas.shared.datamodel"})
+//@EntityScan(basePackages = {"com.pinto.receitas.datamodel"})
 public class ReceitasApplication {
 
     public static void main(String[] args) {

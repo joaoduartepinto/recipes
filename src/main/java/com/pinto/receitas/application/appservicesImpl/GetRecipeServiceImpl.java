@@ -3,13 +3,11 @@ package com.pinto.receitas.application.appservicesImpl;
 import com.pinto.receitas.application.appservicesInter.GetRecipeServiceInter;
 import com.pinto.receitas.application.repositoryInter.RecipeRepositoryInter;
 import com.pinto.receitas.domain.recipe.Recipe;
-import com.pinto.receitas.shared.dto.RecipeOutputDTO;
-import com.pinto.receitas.shared.dto.assemblers.RecipeDomainDTOAssembler;
-import com.pinto.receitas.shared.valueobjects.RecipeName;
+import com.pinto.receitas.dto.RecipeOutputDTO;
+import com.pinto.receitas.dto.assemblers.RecipeDomainDTOAssembler;
+import com.pinto.receitas.domain.valueobjects.RecipeName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class GetRecipeServiceImpl implements GetRecipeServiceInter {

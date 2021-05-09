@@ -1,10 +1,10 @@
 package com.pinto.receitas.domain.recipe;
 
 import com.pinto.receitas.domain.Entity;
-import com.pinto.receitas.shared.valueobjects.Ingredient;
-import com.pinto.receitas.shared.valueobjects.RecipeName;
-import com.pinto.receitas.shared.valueobjects.Steps;
-import com.pinto.receitas.shared.valueobjects.TimeOfCooking;
+import com.pinto.receitas.domain.valueobjects.Ingredient;
+import com.pinto.receitas.domain.valueobjects.RecipeName;
+import com.pinto.receitas.domain.valueobjects.Steps;
+import com.pinto.receitas.domain.valueobjects.TimeOfCooking;
 import lombok.Getter;
 import lombok.Setter;
 

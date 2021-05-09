@@ -3,9 +3,9 @@ package com.pinto.receitas.application.appservicesImpl;
 import com.pinto.receitas.application.appservicesInter.AddRecipeServiceInter;
 import com.pinto.receitas.application.repositoryInter.RecipeRepositoryInter;
 import com.pinto.receitas.domain.recipe.Recipe;
-import com.pinto.receitas.shared.dto.AddRecipeResponseDTO;
-import com.pinto.receitas.shared.dto.RecipeInputDTO;
-import com.pinto.receitas.shared.dto.assemblers.RecipeDomainDTOAssembler;
+import com.pinto.receitas.dto.AddRecipeResponseDTO;
+import com.pinto.receitas.dto.RecipeInputDTO;
+import com.pinto.receitas.dto.assemblers.RecipeDomainDTOAssembler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

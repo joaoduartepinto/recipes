@@ -3,13 +3,16 @@ package com.pinto.receitas.interfaceadapters.repositoryImpl;
 import com.pinto.receitas.application.repositoryInter.RecipeRepositoryInter;
 import com.pinto.receitas.domain.recipe.Recipe;
 import com.pinto.receitas.interfaceadapters.repositoryJpaInter.RecipeJpaRepository;
-import com.pinto.receitas.shared.datamodel.RecipeJpa;
-import com.pinto.receitas.shared.datamodel.RecipeNameJpa;
-import com.pinto.receitas.shared.datamodel.assemblers.RecipeDomainDataAssembler;
-import com.pinto.receitas.shared.valueobjects.RecipeName;
+import com.pinto.receitas.datamodel.RecipeJpa;
+import com.pinto.receitas.datamodel.RecipeNameJpa;
+import com.pinto.receitas.datamodel.assemblers.RecipeDomainDataAssembler;
+import com.pinto.receitas.domain.valueobjects.RecipeName;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @org.springframework.stereotype.Repository
 public class RecipeRepositoryImpl implements RecipeRepositoryInter {
@@ -54,6 +57,17 @@ public class RecipeRepositoryImpl implements RecipeRepositoryInter {
 
         return savedRecipe;
 
+    }
+
+    @Override
+    public Page<Recipe> findAll(Pageable pageable) {
+        Page<RecipeJpa> recipeJpaPage = recipeJpaRepository.findAll(pageable);
+
+        //Page<Recipe> recipePage;
+
+        Page<Recipe> recipePage = recipeJpaPage.map(recipeJpa -> recipeDomainDataAssembler.toDomain(recipeJpa));
+
+        return recipePage;
     }
 
     private void checkIfAlreadyExists(RecipeNameJpa recipeNameJpa) {
