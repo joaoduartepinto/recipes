@@ -40,7 +40,7 @@ public class RecipeRepositoryImpl implements RecipeRepositoryInter {
     }
 
     @Override
-    public void save(Recipe recipe) {
+    public Recipe save(Recipe recipe) {
 
         RecipeNameJpa recipeNameJpa = new RecipeNameJpa(recipe.getRecipeName().toString());
 
@@ -48,7 +48,11 @@ public class RecipeRepositoryImpl implements RecipeRepositoryInter {
 
         RecipeJpa recipeJpa = recipeDomainDataAssembler.toData(recipe);
 
-        recipeJpaRepository.save(recipeJpa);
+        RecipeJpa savedRecipeJpa = recipeJpaRepository.save(recipeJpa);
+
+        Recipe savedRecipe = recipeDomainDataAssembler.toDomain(savedRecipeJpa);
+
+        return savedRecipe;
 
     }
 
