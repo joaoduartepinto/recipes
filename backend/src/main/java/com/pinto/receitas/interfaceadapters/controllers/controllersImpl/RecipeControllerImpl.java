@@ -22,6 +22,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
 @RequestMapping("/recipes")
+@CrossOrigin
 public class RecipeControllerImpl implements RecipeController {
 
     @Autowired
