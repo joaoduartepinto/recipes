@@ -4,6 +4,8 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+**/node_modules/
+
 ### STS ###
 .apt_generated
 .classpath
@@ -36,5 +38,5 @@ build/
 .mvn/
 
 ### application.properties ###
-src/main/resources/*.properties
-src/main/resources/application.properties
+**/src/main/resources/*.properties
+**/src/main/resources/application.properties
