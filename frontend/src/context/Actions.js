@@ -8,10 +8,11 @@ export function fetchRecipeHead(dispatch){
 }
 
 export function fetchRecipeHeadSuccess(recipesHead){
+    console.log(recipesHead)
     return {
         type: FETCH_RECIPES_HEAD_SUCCESS,
         payload: {
-            data: [...recipesHead]
+            data: [...recipesHead.data.content]
         }
     }
 }

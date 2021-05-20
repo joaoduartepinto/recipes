@@ -5,13 +5,7 @@ import reducer from './AppReducer';
 
 const initialState = {
     recipesHead: {
-        content: [
-            {
-                recipeName: '',
-                timeOfCooking: '',
-                links: []
-            }
-        ]
+        content: []
     },
     recipe: {
         recipeName: '',

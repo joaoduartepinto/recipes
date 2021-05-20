@@ -6,14 +6,20 @@ function reducer(state, action) {
         case FETCH_RECIPES_HEAD_FAILURE:
             return {
                 ...state,
-                recipesHead: []
+                recipesHead: {
+                    content: []
+                }
             }
         case FETCH_RECIPES_HEAD_SUCCESS:
+            console.log(action)
             return {
                 ...state,
                 recipesHead: {
-                    content: [...action.payload.data]}
+                    content: [...action.payload.data]
+                }
             }
+        default:
+            return {...state}
     }
 }
 
