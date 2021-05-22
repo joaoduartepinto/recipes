@@ -10,10 +10,10 @@ const Table = () => {
 
     const {recipeName, timeOfCooking} = tableHeaders;
 
-    useEffect(() => {
+    /*useEffect(() => {
         fetchRecipeHead(dispatch);
         console.log(state)
-    }, []);
+    }, [recipesHead]);*/
 
     {/*if (recipesHead.data.length < 0) {
         return (
@@ -22,24 +22,26 @@ const Table = () => {
     } else {  */
     }
     return (
-        <div>
-            <table>
-                <thead>
-                <tr>
-                    <th>{recipeName}</th>
-                    <th>{timeOfCooking}</th>
-                </tr>
-                </thead>
-                <tbody>
-                {recipesHead.content?.map((recipe) => (
-                    <tr key={recipe.recipeName}>
-                        <td>{recipe.recipeName}</td>
-                        <td>{recipe.timeOfCooking}</td>
+        <>
+            <div>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>{recipeName}</th>
+                        <th>{timeOfCooking}</th>
                     </tr>
-                ))}
-                </tbody>
-            </table>
-        </div>
+                    </thead>
+                    <tbody>
+                    {recipesHead.content?.map((recipe) => (
+                        <tr key={recipe.recipeName}>
+                            <td>{recipe.recipeName}</td>
+                            <td>{recipe.timeOfCooking}</td>
+                        </tr>
+                    ))}
+                    </tbody>
+                </table>
+            </div>
+        </>
     );
 
 }
