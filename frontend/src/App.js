@@ -1,5 +1,5 @@
-import Footer from "./Footer";
 import styled from 'styled-components';
+import Routes from "./Routes";
 
 const Body = styled.body`
   width: 100vw;
@@ -8,15 +8,12 @@ const Body = styled.body`
   padding: 0;
 `
 
-
 function App() {
 
     return (
         <>
             <Body>
-                {/*<h1>Hello</h1>*/}
-                {/*<Table/>*/}
-                <Footer/>
+                <Routes/>
             </Body>
         </>
     );
