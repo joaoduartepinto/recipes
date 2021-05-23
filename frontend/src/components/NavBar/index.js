@@ -18,6 +18,11 @@ const NavBar = () => {
                     <NavMenu>
                         <NavItem>
                             <NavItemLink>
+                                About
+                            </NavItemLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavItemLink>
                                 Recipes
                             </NavItemLink>
                         </NavItem>

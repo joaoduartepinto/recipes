@@ -9,7 +9,7 @@ export const FooterContainer = styled.footer`
   align-items: center;
   position: absolute;
   bottom:0;
-  width:101vw;
+  width:100vw;
   height:80px;
   margin:0; 
   padding:0;
